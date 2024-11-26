@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/style.css">
+    <title>To-Do APP</title>
+</head>
+
+<body>
+
+    <div class="todo-container">
+        
+        <div id="menu">
+            <button onclick="mostrarFormulario('registrar')">Agregar tarea</button>
+        </div>
+        
+        <!-- Ventana flotante para agregar tarea -->
+        <div id="overlay" class="overlay">
+            <div class="popup">
+                <h2>Agregar Tarea</h2>
+                <form id="add-task-form" onsubmit="registerTask(event)">
+                    <input type="text" id="task-title" placeholder="Título de la tarea" required>
+                    <textarea id="task-description" placeholder="Descripción de la tarea" required></textarea>
+                    <input type="datetime-local" id="task-datatime" required>
+                    <button type="submit">Agregar</button>
+                    <button type="button" onclick="closePopup()">Cancelar</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Contenedor para las tareas -->
+        <div class="tabla formulario">
+            <h2>Tareas</h2>
+            
+            <!-- Contenedor de tarea individual -->
+            <div class="container-tarea">
+                <div class="titleTarea">
+                    <h3 id="title" class="task-title">
+                        titulo
+                    </h3>
+                    <p id="dataTime" class="task-date">
+                        11-11-2024 14:20
+                    </p>
+                </div>
+                <div class="contentTarea">
+                    <p id="content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus, perferendis, sapiente nobis sint quasi magnam, veritatis et eaque recusandae perspiciatis aliquam obcaecati dicta velit non. Dolorum excepturi laboriosam minus unde.</p>
+                </div>
+                <div class="editTask">
+                    <button onclick="editTask()">Editar Tarea</button>
+                    <button onclick="deletTask()">Eliminar tarea</button>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    <script src="scritp/script.js"></script> <!-- Llama a tu archivo JavaScript -->
+</body>
+</html>
